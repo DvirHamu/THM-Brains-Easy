@@ -12,4 +12,4 @@ First were gonna run nmap to scan the ip address
 -A extensive scan ie versons operating systems etc
 -oN out puts to nmap.txt
 
-![nmap screenshop](Screenshot 2026-03-13 194944.png)
+![TryHackMe Screenshot](/Screenshot 2026-03-13 194944.png)

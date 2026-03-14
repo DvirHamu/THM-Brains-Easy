@@ -13,3 +13,12 @@ First were gonna run nmap to scan the ip address
 -oN out puts to nmap.txt
 
 ![TryHackMe Screenshot](Screenshot%202026-03-13%20194944.png)
+
+OK nice some important looking things things I saw which included the different ports that were open and the services running on them.
+Port 43229 and 50000.
+Team city looks intersting to me, so when I look it up I find 
+'CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED)' 
+This is where I open metasploit
+
+![TryHackMe Screenshot2](sc2.png)
+

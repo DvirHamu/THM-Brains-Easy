@@ -76,8 +76,67 @@ And boom We got it.
 
 
 next time popping open a shell is more risky becuase now that process can be logged and detected by lets say crowdstrike for unusual detection... then using meterpreter.
+
 <img width="798" height="307" alt="Image" src="https://github.com/user-attachments/assets/d559f4ff-4e15-4f3b-b8d7-4b823f79cc13" />
 
 
 # Part 2: Blue Team
+
+Now we get access to use splunk to understand what a security analyst would do 
+
+<img width="1408" height="827" alt="Image" src="https://github.com/user-attachments/assets/ed4cf7fa-72d0-490b-9167-f1e75a6205fb" />
+
+Now there are different ways to search but the question is 
+
+`What is the name of the backdoor user which was created on the server after exploitation?`
+
+so we have to find the user that was created with maybe somthing like 
+
+`| metasearch index=*
+| stats count by index`
+We do this to understand what kind of logs we can have before continuing to search for the user
+
+<img width="1459" height="516" alt="Image" src="https://github.com/user-attachments/assets/5cfbf1ae-e987-4b5d-85f8-8189f492e852" />
+
+Ok interesting only found two auth_logs...
+
+<img width="1445" height="477" alt="Image" src="https://github.com/user-attachments/assets/7d75e307-0091-4961-aa6e-877dbd04cf58" />
+
+
+`let's go deeper into this /var/log/auth.log
+user source=*/var/log/auth.log`
+
+#important I also had to add more fields...
+
+<img width="1382" height="623" alt="Image" src="https://github.com/user-attachments/assets/6722c5cd-d99e-4fe7-9e03-d4fee1930b9a" />
+
+After selcting the name field I can see the name of the user
+
+<img width="1011" height="643" alt="Image" src="https://github.com/user-attachments/assets/952432b1-7a6f-4906-8d91-5a2fdd9d6222" />
+
+I realized after you can also search 
+`useradd`
+to find the new user...
+
+Now
+
+
+`What is the name of the malicious-looking package installed on the server?`
+
+After searching 
+
+`index=main`
+
+<img width="1295" height="533" alt="Image" src="https://github.com/user-attachments/assets/fd9852e6-fabf-48af-a4d4-cef6633e10fa" />
+
+I see a lot of these installed packages... So we can go to extract fields and use spunks really nice feature
+
+<img width="1700" height="714" alt="Image" src="https://github.com/user-attachments/assets/d756399f-16d2-4c3f-9c98-e7c2227333c0" />
+
+Step 1: select sample event... then for method use space delimiter and then change the field4 to applicatino and seach to see all the installed packages.
+from there we can change the date range from when user was created....
+
+
+
+<img width="1695" height="643" alt="Image" src="https://github.com/user-attachments/assets/9e7a624a-1c02-4d1d-a1e5-0a83fbd0e236" />
 

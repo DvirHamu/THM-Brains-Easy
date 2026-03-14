@@ -136,7 +136,30 @@ I see a lot of these installed packages... So we can go to extract fields and us
 Step 1: select sample event... then for method use space delimiter and then change the field4 to applicatino and seach to see all the installed packages.
 from there we can change the date range from when user was created....
 
+Which was 4/7/2024
 
+'sourcetype="packages" date_month="april" date_mday="7"'
+
+<img width="1107" height="207" alt="Image" src="https://github.com/user-attachments/assets/eba324ac-27dd-44ca-b902-03e0f38c864f" />
 
 <img width="1695" height="643" alt="Image" src="https://github.com/user-attachments/assets/9e7a624a-1c02-4d1d-a1e5-0a83fbd0e236" />
 
+NICEEE WE GOT IT 
+
+`datacollector`
+#important to know it's day month year
+
+
+`Question 3 What is the name of the plugin installed on the server after successful exploitation?`
+
+<img width="1392" height="704" alt="Image" src="https://github.com/user-attachments/assets/1bf87b12-a5a9-486a-a544-1fc427d89dcc" />
+
+Bam we have the zip file becuase we already have the date range...
+
+AyzzbuXY.zip
+
+
+<img width="1397" height="641" alt="Image" src="https://github.com/user-attachments/assets/17a8c6ac-8e82-407b-ad70-8d96dc15fabf" />
+
+
+<img width="1874" height="994" alt="Image" src="https://github.com/user-attachments/assets/d7799f0a-d109-4d25-9162-eca9b601a134" />
